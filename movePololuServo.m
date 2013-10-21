@@ -1,8 +1,9 @@
 function movePololuServo(port, channel, servo_setting, device)
 %MOVEPOLOLUSERVO Control an attached Pololu Maestro Servo Controller
-%   Given a channel (servo number), servo setting in 1/4 micro seconds and
-%   serial port name, sends a command to the Pololu Servo controller. If
-%   multiple controllers are daisy chained on the same serial line, the
+%   Given a channel (servo number), servo setting (in 1/4 micro seconds) and
+%   serial port name (string), sends a command to the Pololu Servo controller.
+%   
+%   If multiple controllers are daisy chained on the same serial line, the
 %   device parameter can be used to select which device to talk to
 %   (defaults to 12).
 %   
@@ -27,6 +28,9 @@ function movePololuServo(port, channel, servo_setting, device)
 %   Finally, note that before using this script, the controller must be
 %   modified using the Pololu Servo Controller Software to be in USB Dual
 %   Port mode.
+%
+%   This code based on discussions at
+%   http://forum.pololu.com/viewtopic.php?f=16&t=3246
     
     % Device number is 12 by default
     if(nargin == 3)
